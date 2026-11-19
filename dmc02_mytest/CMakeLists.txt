@@ -47,6 +47,10 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
         User/BSP/bsp_SPI/bsp_spi.c
         User/middlewares/devices/ws2812/ws2812.c
+        User/middlewares/devices/key/key.c
+        User/middlewares/Algorithm/music/Music.c
+        User/BSP/bsp_UART/bsp_usart.c
+        Plotter/VOFA+/vofa+.c
 )
 
 # Add include paths

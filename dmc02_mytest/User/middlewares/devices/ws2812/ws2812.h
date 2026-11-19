@@ -8,7 +8,6 @@
 #include "bsp_spi.h"     //只用到 bsp_spi_status_t，不包含任何 HAL 头文件
 
 
-
 //================== 配置 ==================
 #define WS2812_SPI_ID      BSP_SPI_1   //改成 BSP_SPI_6 就是阻塞方式，其它代码不用改
 #define WS2812_LED_NUM     1U         //灯珠数量
@@ -31,7 +30,7 @@
 int WS2812_Init(void);
 
 //设置单个灯的颜色，只写入颜色缓存，要调用 WS2812_Show 才会刷新
-void WS2812_SetPixel(uint16_t idx, uint8_t r, uint8_t g, uint8_t b);
+void WS2812_SetPixel(uint16_t idx, uint8_t g, uint8_t r, uint8_t b);
 
 //清空颜色缓存(全部熄灭)，同样要调用 WS2812_Show 才会生效
 void WS2812_Clear(void);

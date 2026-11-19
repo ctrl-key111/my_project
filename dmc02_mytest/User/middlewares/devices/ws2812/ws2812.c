@@ -49,7 +49,7 @@ int WS2812_Init(void)
     return 0;
 }
 
-void WS2812_SetPixel(uint16_t idx, uint8_t r, uint8_t g, uint8_t b)
+void WS2812_SetPixel(uint16_t idx,   uint8_t g,   uint8_t r,   uint8_t b)
 {
     if (idx < WS2812_LED_NUM)
     {
@@ -92,7 +92,31 @@ bsp_spi_status_t WS2812_Show(void)
             }
         }
     }
-    for (i = 0U; i < WS2812_RESET_TAIL; i++) { buf[pos++] = 0x00U; }
+    for (i = 0U; i < WS2812_RESET_TAIL; i++)
+    {
+        buf[pos++] = 0x00U;
+    }
 
     return s_ws_spi->ops->transmit(s_ws_spi, buf, pos);   //零拷贝发送
 }
+
+// 颜色	按 GRB 顺序输出 (G, R, B)
+// 黑	(0, 0, 0)
+// 白	(255, 255, 255)
+// 红	(0, 255, 0)
+// 绿	(255, 0, 0)
+// 蓝	(0, 0, 255)
+// 黄	(255, 255, 0)
+// 青	(255, 0, 255)
+// 品红/洋红	(0, 255, 255)
+// 橙	(165, 255, 0)
+// 紫	(0, 128, 128)
+// 灰	(128, 128, 128)
+// 粉	(192, 255, 203)
+// 棕	(42, 165, 42)
+// 金	(215, 255, 0)
+// 银	(192, 192, 192)
+// 天蓝	(206, 135, 235)
+// 草绿	(252, 124, 0)
+// 深红	(0, 139, 0)
+// 海军蓝	(0, 0, 128)
