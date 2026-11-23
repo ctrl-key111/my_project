@@ -2,3 +2,4 @@
 *.exe
 # Clion编辑器忽略项
 **/.idea/*
+**/build/*

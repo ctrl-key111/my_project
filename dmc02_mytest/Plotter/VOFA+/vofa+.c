@@ -14,7 +14,7 @@ static volatile uint8_t tx_busy = 0u;
 
 void Vofa_JustFloat(const float *data, uint8_t num)
 {
-    static const uint8_t tail[4] = {0x00u, 0x00u, 0x80u, 0x7Fu};  /* +INF，小端 */
+    static const uint8_t tail[4] = {0x00u, 0x00u, 0x80u, 0x7Fu};
 
     if (data == NULL || num == 0u)
     {
@@ -22,7 +22,7 @@ void Vofa_JustFloat(const float *data, uint8_t num)
     }
     if (num > VOFA_JUSTFLOAT_MAX_CH)
     {
-        num = VOFA_JUSTFLOAT_MAX_CH;      /* 静默截断；也可改成 return */
+        num = VOFA_JUSTFLOAT_MAX_CH;
     }
 
     if (tx_busy)

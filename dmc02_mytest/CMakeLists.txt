@@ -45,18 +45,18 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-        User/BSP/bsp_SPI/bsp_spi.c
+        "User/BSP(Driver)/bsp_SPI/bsp_spi.c"
         User/middlewares/devices/ws2812/ws2812.c
         User/middlewares/devices/key/key.c
         User/middlewares/Algorithm/music/Music.c
-        User/BSP/bsp_UART/bsp_usart.c
+        "User/BSP(Driver)/bsp_UART/bsp_usart.c"
         Plotter/VOFA+/vofa+.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-        ${CMAKE_CURRENT_SOURCE_DIR}  User/BSP/bsp_SPI
+        ${CMAKE_CURRENT_SOURCE_DIR}  "User/BSP(Driver)/bsp_SPI"
 )
 
 # Add project symbols (macros)

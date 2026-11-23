@@ -72,7 +72,14 @@ _Min_Stack_Size = 0x400; /* required amount of stack */
 
 /* Define output sections */
 SECTIONS
-{
+{       .axi_sram (NOLOAD) :
+          {
+            . = ALIGN(32);
+            *(.axi_sram)
+            *(.axi_sram*)
+            . = ALIGN(32);
+          } >RAM_D1
+
      .sram1 (NOLOAD) :
      {
        . = ALIGN(32);
