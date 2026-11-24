@@ -135,7 +135,4 @@ uint8_t          BSP_ART_IsBusy(bsp_art_t *dev);
 uint8_t         *BSP_ART_GetTxBuf(bsp_art_t *dev);
 
 
-
-
-
 #endif //DMC02_MYTEST_BSP_UART_H

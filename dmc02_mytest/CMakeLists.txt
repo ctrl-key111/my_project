@@ -49,14 +49,16 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
         User/middlewares/devices/ws2812/ws2812.c
         User/middlewares/devices/key/key.c
         User/middlewares/Algorithm/music/Music.c
-        "User/BSP(Driver)/bsp_UART/bsp_usart.c"
+        "User/BSP(Driver)/bsp_ART/bsp_art.c"
         Plotter/VOFA+/vofa+.c
+        User/middlewares/devices/BMI088/bmi088.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
         ${CMAKE_CURRENT_SOURCE_DIR}  "User/BSP(Driver)/bsp_SPI"
+        ${CMAKE_CURRENT_SOURCE_DIR}  "User/BSP(Driver)/bsp_ART"
 )
 
 # Add project symbols (macros)
